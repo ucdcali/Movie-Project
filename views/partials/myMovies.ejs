@@ -1,0 +1,29 @@
+<div class="col-md-8">
+  <h2>Watched Movies</h2>
+  <% if (flashMessages.info) { %>
+    <% console.log(flashMessages) %>
+    <div class="alert alert-success">
+      <%= flashMessages.info %>
+    </div>
+  <% } %>
+  <div class="row">
+    <% watchedMovies.forEach(function(movie) { %>
+      <div class="col-md-2">
+        <div class="movie-poster-container">
+          <a href="/displayMovie?title=<%= movie.title %>">
+          <img src="<%= movie.poster %>" alt="Poster of <%= movie.title %>">
+          </a>
+          <div class="times-watched">Watched: <%= movie.timesWatched %></div>
+          <form action="/watchAgain" method="post">
+            <input type="hidden" name="movieId" value="<%= movie._id %>">
+            <button type="submit">Watch Again</button>
+          </form>
+          <form action="/delete" method="post">
+            <input type="hidden" name="movieId" value="<%= movie._id %>">
+            <button type="submit">Delete Movie</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

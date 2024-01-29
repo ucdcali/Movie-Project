@@ -1,0 +1,62 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#mainContent {
+  padding: 50px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.movie-poster-container {
+  /* existing styles */
+  width: fit-content;  /* Adjust the container width to fit the content (image) */
+  margin: 0 auto;  /* Center the container */
+}
+
+.movie-poster-container img {
+  display: block; /* Ensures the image takes up the full width of its container */
+  width: 100%; /* Make image expand to full width of its container */
+  height: 200px; /* Fixed height for all posters */
+  object-fit: cover; /* Ensures the image covers the area, might crop it */
+}
+
+
+.movie-poster-container form {
+  width: 100%;  /* Make form take full width of its container */
+}
+
+.movie-poster-container button {
+  width: 100%;  /* Make button expand to full width of its container */
+  margin-top: 10px;  /* Optional: adds some space above the button */
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.times-watched {
+  text-align: center; /* Center text horizontally */
+  width: 100%; /* Ensure the div takes up the full width of its parent */
+  margin-top: 10px; /* Optional: adds some space above the div */
+}
+
+/* Style for each movie grid item */
+.col-md-2 {
+  margin-bottom: 10px; /* Adds 10px space below each movie grid item */
+}
+
+.col-md-4 {
+  position: sticky;
+  top: 0; /* Adjust this value as needed, e.g., height of navbar */
+  z-index: 10; /* To ensure it stays above other content */
+  background-color: #fff; /* Background color of the lookup section */
+  height: 100vh; /* Optional: Adjust the height as needed */
+  overflow-y: auto; /* Optional: Allows internal scrolling if the content is too long */
+}
